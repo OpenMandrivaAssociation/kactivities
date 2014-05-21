@@ -18,7 +18,14 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt5)
+BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5DBusAddons)
+BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5Config)
+BuildRequires: cmake(KF5Service)
+BuildRequires: cmake(KF5WindowSystem)
+BuildRequires: cmake(KF5Declarative)
+BuildRequires: boost-devel
 BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
