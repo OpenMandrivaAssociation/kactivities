@@ -5,7 +5,7 @@
 
 Name: kactivities
 Version: 4.99.0
-Release: 1
+Release: 2
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Activities framework
 URL: http://kde.org/
@@ -57,9 +57,10 @@ ninja -C build
 
 %install
 DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+mv %{buildroot}%{_bindir}/kactivitymanagerd %{buildroot}%{_bindir}/kactivitymanagerd5
 
 %files
-%{_bindir}/kactivitymanagerd
+%{_bindir}/kactivitymanagerd5
 %{_datadir}/kservices5/*
 %{_datadir}/kservicetypes5/*
 %{_libdir}/plugins/kactivitymanagerd
