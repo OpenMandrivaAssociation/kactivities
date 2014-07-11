@@ -5,7 +5,7 @@
 
 Name: kactivities
 Version: 4.99.0
-Release: 3
+Release: 4
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Activities framework
 URL: http://kde.org/
