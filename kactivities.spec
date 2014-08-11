@@ -4,9 +4,9 @@
 %define debug_package %{nil}
 
 Name: kactivities
-Version: 5.0.0
+Version: 5.1.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Activities framework
 URL: http://kde.org/
 License: GPL
