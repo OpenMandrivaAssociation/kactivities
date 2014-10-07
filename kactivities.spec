@@ -4,7 +4,7 @@
 %define debug_package %{nil}
 
 Name: kactivities
-Version: 5.1.0
+Version: 5.3.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Activities framework
@@ -65,7 +65,11 @@ mv %{buildroot}%{_bindir}/kactivitymanagerd %{buildroot}%{_bindir}/kactivitymana
 %{_datadir}/kservices5/*
 %{_datadir}/kservicetypes5/*
 %{_libdir}/plugins/kactivitymanagerd
-%{_libdir}/qml
+%{_libdir}/plugins/kactivitymanagerd_fileitem_linking_plugin.so
+%{_libdir}/plugins/kcm_activities.so
+%{_libdir}/plugins/kio_activities.so
+%{_datadir}/kf5/kactivitymanagerd
+%{_libdir}/qml/*
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
