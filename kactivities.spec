@@ -25,6 +25,7 @@ BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5Declarative)
+BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: boost-devel
 BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
