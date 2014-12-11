@@ -52,13 +52,14 @@ Development files for the KDE Frameworks 5 Activities library
 
 %prep
 %setup -q
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+DESTDIR="%{buildroot}" ninja -C build install
 mv %{buildroot}%{_bindir}/kactivitymanagerd %{buildroot}%{_bindir}/kactivitymanagerd5
 %find_lang %{name}%{major}
 
@@ -66,12 +67,12 @@ mv %{buildroot}%{_bindir}/kactivitymanagerd %{buildroot}%{_bindir}/kactivitymana
 %{_bindir}/kactivitymanagerd5
 %{_datadir}/kservices5/*
 %{_datadir}/kservicetypes5/*
-%{_libdir}/plugins/kactivitymanagerd
-%{_libdir}/plugins/kactivitymanagerd_fileitem_linking_plugin.so
-%{_libdir}/plugins/kcm_activities.so
-%{_libdir}/plugins/kio_activities.so
+%{_libdir}/qt5/plugins/kactivitymanagerd
+%{_libdir}/qt5/plugins/kactivitymanagerd_fileitem_linking_plugin.so
+%{_libdir}/qt5/plugins/kcm_activities.so
+%{_libdir}/qt5/plugins/kio_activities.so
 %{_datadir}/kf5/kactivitymanagerd
-%{_libdir}/qml/*
+%{_libdir}/qt5/qml/org/kde/activities
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
@@ -81,5 +82,5 @@ mv %{buildroot}%{_bindir}/kactivitymanagerd %{buildroot}%{_bindir}/kactivitymana
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
-%{_prefix}/mkspecs/*
+%{_libdir}/qt5/mkspecs/modules/*.pri
 %{_libdir}/pkgconfig/*
