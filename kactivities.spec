@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kactivities
-Version: 5.7.0
+Version: 5.8.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Activities framework
@@ -32,7 +32,7 @@ BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
 %description
-KDE Frameworks 5 Activities framework
+KDE Frameworks 5 Activities framework.
 
 %package -n %{libname}
 Summary: KDE Frameworks 5 Activities framework
@@ -40,7 +40,7 @@ Group: System/Libraries
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-KDE Frameworks 5 Activities framework
+KDE Frameworks 5 Activities framework.
 
 %package -n %{devname}
 Summary: Development files for the KDE Frameworks 5 Activities library
@@ -48,7 +48,7 @@ Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files for the KDE Frameworks 5 Activities library
+Development files for the KDE Frameworks 5 Activities library.
 
 %prep
 %setup -q
