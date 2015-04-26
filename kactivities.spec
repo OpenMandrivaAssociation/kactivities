@@ -12,9 +12,6 @@ Summary: KDE Frameworks 5 Activities framework
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Gui)
@@ -26,7 +23,6 @@ BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5)
 BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5DBusAddons)
 BuildRequires: cmake(KF5I18n)
@@ -36,7 +32,6 @@ BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5Declarative)
 BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: boost-devel
-BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
 %description
@@ -60,14 +55,14 @@ Development files for the KDE Frameworks 5 Activities library.
 
 %prep
 %setup -q
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install
+%ninja_install -C build
+
 mv %{buildroot}%{_bindir}/kactivitymanagerd %{buildroot}%{_bindir}/kactivitymanagerd5
 %find_lang %{name}%{major}
 
