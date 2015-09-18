@@ -55,8 +55,6 @@ Development files for the KDE Frameworks 5 Activities library.
 
 %prep
 %setup -q
-sed -i '1s/^/cmake_minimum_required(VERSION 3.1)\n/' CMakeLists.txt
-
 %cmake_kde5
 
 %build
