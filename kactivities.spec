@@ -12,7 +12,6 @@ Summary: KDE Frameworks 5 Activities framework
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-Patch0: kactivities-5.18.0-soname.patch
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Gui)
