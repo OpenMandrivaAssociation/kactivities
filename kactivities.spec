@@ -67,17 +67,7 @@ Development files for the KDE Frameworks 5 Activities library.
 # Private library
 rm -f %{buildroot}%{_libdir}/libkactivitymanagerd_plugin.so
 
-%find_lang %{name}%{major}
-
-%files -f %{name}%{major}.lang
-%{_bindir}/kactivitymanagerd
-%{_datadir}/kservices5/*
-%{_datadir}/kservicetypes5/*
-%{_libdir}/qt5/plugins/kactivitymanagerd/*/*.so
-%{_libdir}/qt5/plugins/kactivitymanagerd_fileitem_linking_plugin.so
-%{_libdir}/qt5/plugins/kcm_activities.so
-%{_libdir}/qt5/plugins/kio_activities.so
-%{_datadir}/kf5/kactivitymanagerd
+%files
 %{_libdir}/qt5/qml/org/kde/activities
 
 %files -n %{libname}
