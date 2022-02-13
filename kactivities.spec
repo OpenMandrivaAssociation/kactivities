@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kactivities
-Version: 5.90.0
+Version: 5.91.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Activities framework
@@ -81,7 +81,6 @@ rm -f %{buildroot}%{_libdir}/libkactivitymanagerd_plugin.so
 
 %files -n %{devname}
 %{_includedir}/KF5/KActivities
-%{_includedir}/KF5/kactivities_version.h
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
 %{_libdir}/qt5/mkspecs/modules/*.pri
